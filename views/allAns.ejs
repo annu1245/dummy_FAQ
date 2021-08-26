@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include('./layouts/head')%>
+</head>
+<body>
+    <div class="container mb-3 col-6 mt-5 text-center">
+        <label  class="form-label">Question :- </label>
+        <label  class="form-label"><%- myques.questions%></label>
+      </div>
+      <% if (status == 0) { %>
+        <div class="d-grid gap-2 col-6 mx-auto">
+              <div> Not any ansewers yet!!!!!!!!!!!!!!! 👎 </div>
+        </div>
+        <% } %>
+    <% ans.forEach(function(user){ %>
+        
+        <div class="container col-6 mt-5">
+              <div class="mb-3">
+                <label  class="form-label">Answerd By :- </label>
+                <label  class="form-label"><%- user.name%></label>
+              </div>
+              <div class="mb-3">
+                <textarea disabled class="form-control" name="uanswer" rows="4"><%- user.answer%></textarea>
+              </div>
+        </div>
+
+        <% }) %>
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-warning mx-auto"><a href="/giveAns?id=<%= myques.id %>">Give your Ans if any!!!</a></button>
+          </div>
+    </body>
+</html>

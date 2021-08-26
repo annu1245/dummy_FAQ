@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./layouts/head') %>
+</head>
+<body>
+    <div class="container col-6 mt-5">
+        <form action="/send/ans" method="POST">
+          <input type="hidden" name="quesId" value="<%- ques_id%>">
+        <div class="mb-3">
+            <label  class="form-label">Name</label>
+            <input type="text" name="uname" class="form-control" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">write your Ans</label>
+            <textarea class="form-control" name="uanswer" rows="4"></textarea>
+          </div>
+          <button class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
